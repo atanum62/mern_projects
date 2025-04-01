@@ -1,7 +1,12 @@
 import React from "react";
+import Cards from "../Components/Home/Cards";
 
 const Importanttasks = () => {
-  return <div>Importanttasks</div>;
+  return (
+    <div>
+      <Cards home={"false"} />
+    </div>
+  );
 };
 
 export default Importanttasks;
