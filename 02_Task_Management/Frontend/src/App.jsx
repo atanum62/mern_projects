@@ -5,6 +5,8 @@ import Alltasks from "./Pages/Alltasks";
 import Importanttasks from "./Pages/Importanttasks";
 import Completedtasks from "./Pages/Completedtasks";
 import Incompleted from "./Pages/Incompleted";
+import Signup from "./Pages/signup";
+import Login from "./Pages/Login";
 
 const App = () => {
   return (
@@ -17,6 +19,9 @@ const App = () => {
             <Route path="/completedtasks" element={<Completedtasks />} />
             <Route path="/incompletedtasks" element={<Incompleted />} />
           </Route>
+
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
