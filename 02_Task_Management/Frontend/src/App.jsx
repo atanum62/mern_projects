@@ -8,7 +8,7 @@ import Incompleted from "./Pages/Incompleted";
 
 const App = () => {
   return (
-    <div className="bg-gray-900 text-white h-screen p-2">
+    <div className="bg-gray-900 text-white h-screen p-2 relative">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />}>

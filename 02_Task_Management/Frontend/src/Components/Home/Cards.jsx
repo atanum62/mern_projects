@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { IoAddCircleSharp } from "react-icons/io5";
-const Cards = ({ home }) => {
+const Cards = ({ home, setInputdiv }) => {
   const data = [
     {
       title: "The Best Coding Channel",
@@ -61,7 +61,10 @@ const Cards = ({ home }) => {
           </div>
         ))}
       {home === "true" && (
-        <div className="flex flex-col justify-center items-center bg-gray-800 rounded-sm p-4 text-gray-300 border border-gray-500 hover:scale-105 hover:cursor-pointer">
+        <div
+          className="flex flex-col justify-center items-center bg-gray-800 rounded-sm p-4 text-gray-300 border border-gray-500 hover:scale-105 hover:cursor-pointer"
+          onClick={() => setInputdiv("fixed")}
+        >
           <button>
             <IoAddCircleSharp className="text-2xl" />
           </button>
