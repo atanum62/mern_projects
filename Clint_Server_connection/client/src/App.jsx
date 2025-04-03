@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const App = () => {
+  const [backendData, setBackendData] = useState([{}]);
+
+  useEffect(() => {
+    fetch("/api")
+      .then((response) => response.json())
+      .then((data) => {
+        setBackendData(data);
+      });
+  }, []);
   return (
-    <div>
-      {" "}
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <>
+      <div>
+        {typeof backendData.users === "undefined" ? (
+          <p>Loading</p>
+        ) : (
+          backendData.users.map((user, i) => <p key={i}>{user}</p>)
+        )}
+      </div>
+    </>
   );
 };
 

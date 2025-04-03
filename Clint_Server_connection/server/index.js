@@ -1,13 +1,19 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const cors = require('cors'); // Add CORS support
+require('dotenv').config()
+// console.log(process.env.port);
+const app = express();
+const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    // res.send('Hello World!');
-    res.json({"user":["iiooj","nwrji","win3"]})
-    
-})
+// Enable CORS
+app.use(cors());
 
+// API endpoint
+app.get('/api', (req, res) => {
+    res.json({"users":["iiooj","nwrji","win3"]});
+});
+
+// Start server
 app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`)
-})
+    console.log(`Server running on http://localhost:${port}`);
+});
