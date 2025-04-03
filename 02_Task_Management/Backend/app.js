@@ -4,9 +4,11 @@ require("dotenv").config();
 require("../Backend/conn/conn");
 const cors = require("cors");
 app.use(cors());
-const UserApi = require("./routes/user")
+const UserApi = require("./routes/user");
+const TaskApi = require("./routes/task");
 app.use(express.json());
 app.use("/api/v1", UserApi);
+app.use("/api/v2", TaskApi);
 
 const usermodel = require("../Backend/models/userModel");
 const taskModel=require("../Backend/models/TaskModel")
